@@ -1,0 +1,311 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Verdana", sans-serif;
+    font-size: 15px;
+}
+/* 1. Từ ngoài vào trong
+   2. Từ trên xuống dưới
+   3. Từ tổng quan đến chi tiết
+*/
+
+/*
+1. Vị trí
+2. Kích thước (width, height) 
+3. Màu sắc
+    #000 :màu đen #fff: màu trắng
+4. Font chữ
+*/
+.clear {
+    clear: both;
+    /* dùng clear để fix trong float, giúp thẻ cha ôm trọn thẻ con */
+}
+
+.text-white {
+    color:#fff !important;
+}
+
+#main {
+
+}
+#header {
+    height: 46.4px;
+    width: 100%;
+    background-color: #000;
+    position: fixed; /* giúp header cố định trên màn hình*/
+    top: 0;
+    z-index: 1; 
+    /* z-index để đẩy header nổi lên trên slider */
+}
+#nav, .subnav {
+   list-style-type: none;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav li {
+    display: block; 
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+
+#nav li a {
+    display: block;
+    text-decoration: none;
+    line-height: 46.4px;
+    padding: 0px 24px;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav .subnav li:hover a,
+#nav > li:hover > a  {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    min-width: 160px;
+    display: none; 
+    top: 100%;
+    left:0;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 20%);
+}
+ 
+#nav .subnav a {
+    color: #000;
+    padding: 0px 16px;
+    line-height: 38px;
+}
+
+#header .arrow-down {
+     font-size: 14px;
+}
+
+#header .search-btn {
+    float: right;
+    color: #fff;
+    padding: 14px 24px ;
+    
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    font-size: 14px 14px;
+    cursor: pointer;
+}
+
+    
+#slider {
+    position: relative;
+    margin-top: 46px;
+    /* margin-top = chiều cao header, để tránh slider bị header đè lên */
+    background-image: url(/assets/img/slider/chicago.jpg) ;
+    background-position: top; 
+    /* cài đặt vị trí back ground ở trung tâm trên cùng */
+     background-size: cover; 
+    /* cài đặt kích thước tự động bao phủ toàn bộ */
+     padding-top: 50%;  
+    /* kích thước chiều cao = 50% chiều rộng (đo từ trang gốc ) */
+     background-repeat: no-repeat; 
+}
+
+#slider .text-content {
+    position: absolute;
+    /* để text lùi xuống dưỚi và k làm ảnh hưởng size của ảnh nền */
+    bottom: 46px;
+    width: 100%;
+    /* cách khác left: 0; right:0; 
+    Để chiều ngang của text =100% thì chữ tự căn giữa */
+    color: #fff;
+    
+}
+
+#slider .text-heading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    margin : 25px 0 ;
+    font-size: 24px;
+    text-align: center;
+}
+
+#slider .text-description {
+    text-align: center ;
+    font-size: 15px;
+} 
+
+#content {
+   
+}
+
+#content .content-section {
+     max-width: 800px;
+     padding: 64px 0px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#content .section-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 10px 0px;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    text-align: center;
+    font-style: italic;
+    font-size: 15px;
+    opacity: 0.6;
+    line-height: 1.5;
+    margin: 15px 0px;
+}
+
+#content .about-text {
+    margin: 15px 0px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+#content .member-list {
+    margin-top: 48px;
+}
+
+#content .member-item {
+    float:left;
+    width: calc(100%/3);
+    text-align: center;
+}
+
+#content .member-name {
+    
+    font-size: 15px;
+    padding: 15px 0;
+}
+
+#content .member-avatar {
+    width: 154px;
+    border-radius: 4px;
+}
+
+#content .tour-section {
+    background-color: #000;
+}
+.ticket-list {
+    background-color: #fff;
+    margin-top: 40px;
+    list-style-type: none;
+}
+
+.ticket-list .Sold-out {
+    background-color: #F44336;
+    margin: 0 0 0 16px;
+    padding: 0 8px;
+}
+
+.ticket-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+.ticket-list .quantity {
+    float: right;
+    background-color: #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 22px;
+    text-align: center;
+    line-height: 24px;
+    color:#fff;
+    margin-right:16px;
+    margin-top: -2px;
+}
+
+.place-list {
+     margin: 32px -8px 0px;
+     padding-bottom: 48px;
+}
+
+.place-item {
+  float: left;
+  width: calc(100%/3);
+  padding : 0 8px;
+  
+}
+
+.place-content {
+  background-color: #fff;
+  padding:  16px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.place-img {
+   width: 100%;
+   display: block;
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-heading {
+   font-weight: 600;
+   font-size: 15px;
+}
+
+.place-time {
+   color: #757575;
+   margin-top: 15px;
+}
+
+.place-desc {
+   margin-top:15px;
+}
+
+.place-buy-btn {
+   color: #fff;
+   background-color: #000;
+   text-decoration: none;
+   padding: 8px 16px;
+   display: inline-block;
+   margin-top: 15px;
+}
+
+.place-buy-btn:hover {
+    background-color:#ccc;
+    color:#000;
+    cursor: pointer;
+}
+
+
+
+
+#footer {
+
+}
